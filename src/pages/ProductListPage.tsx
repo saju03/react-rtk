@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 export default function ProductListPage() {
   const user = useAppSelector((state) => state.user);
-  const { data: products, error, isLoading } = useGetProductsQuery();
+  const { data: products, error, isLoading } = useGetProductsQuery({});
 
   return (
     <div style={{ padding: '20px', textAlign: 'center' }}>

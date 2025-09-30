@@ -1,12 +1,12 @@
 import { useParams } from 'react-router-dom';
-import { useGetProductQuery } from '../lib/redux/api/apiSlice';
+import { useGetProductsQuery } from '../lib/redux/api/apiSlice';
 import { useAppSelector } from '../lib/redux/hooks';
 import { Link } from 'react-router-dom';
 
 export default function ProductDetailPage() {
   const { id } = useParams<{ id: string }>();
   const user = useAppSelector((state) => state.user);
-  const { data: product, error, isLoading } = useGetProductQuery(Number(id));
+  const { data: product, error, isLoading } = useGetProductsQuery(Number(id));
 
   if (!user.status) {
     return (
